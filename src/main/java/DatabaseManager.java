@@ -591,6 +591,9 @@ public class DatabaseManager {
         return output;
     }
 
+    public Connection getConnection() {
+        return connection;
+    }
     public void close() {
         try {
             if (connection != null) {

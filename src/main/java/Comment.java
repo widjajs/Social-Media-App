@@ -16,7 +16,9 @@ public class Comment implements Serializable {
         this.likes = likes;
         this.dislikes = dislikes;
         this.content = content;
-    }public String getCreator_UUID() {
+    }
+
+    public String getCreator_UUID() {
         return creator_UUID;
     }
 
@@ -63,6 +65,15 @@ public class Comment implements Serializable {
     public void setContent(String content) {
         this.content = content;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Comment comment = (Comment) o;
+        return this.comment_UUID.equals(comment.getComment_UUID());
+    }
+
 
     @Override
     public String toString() {
